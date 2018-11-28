@@ -2,6 +2,7 @@
 
 import os
 import string
+from operator import itemgetter
 
 file_dir = "../class_data/"
 alice_fn = "alice_in_wonderland.dat"
@@ -37,7 +38,8 @@ for w in alice_words:
     if w not in words_unk:
         words[w] += 1
 
-ordered_words = sorted([(v, k) for k, v in words.items()])
+# ordered_words = sorted([(v, k) for k, v in words.items()])
+ordered_words = sorted(words.items(), key=itemgetter(1))
 
 print()
 print(f'Total words in English dictionary we used: {len(words)}')
