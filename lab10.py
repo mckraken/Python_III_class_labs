@@ -12,9 +12,9 @@ def factorial_func(x):
         exit(1)
         # continue
 
-    if x == 0:
+    if x == 1:
         return 1
-    elif not x >= 1:
+    elif not x > 1:
         return "we need a positive integer"
     return x * factorial_func(x - 1)
 
